@@ -4,6 +4,7 @@ import './App.scss';
 import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavBar from '../components/MyNavBar/MyNavBar';
+import BoardsContainer from '../components/BoardsContainer/BoardsContainer';
 
 firebaseConnection.firebaseApp();
 class App extends React.Component {
@@ -33,7 +34,7 @@ class App extends React.Component {
         <MyNavBar authed={authed}/>
           <button className="btn btn-info">REACT PINTEREST</button>
           {
-            (authed) ? (<div>You logged in</div>) : (<Auth />)
+            (authed) ? (<BoardsContainer />) : (<Auth />)
           }
       </div>
     );
