@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import './App.scss';
 import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
+import MyNavBar from '../components/MyNavBar/MyNavBar';
 
 firebaseConnection.firebaseApp();
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <MyNavBar authed={authed}/>
           <button className="btn btn-info">REACT PINTEREST</button>
           {
             (authed) ? (<div>You logged in</div>) : (<Auth />)
